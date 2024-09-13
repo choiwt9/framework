@@ -31,26 +31,25 @@ public class BoardServiceImpl implements BoardService{
 
 	@Override
 	public ArrayList<Board> selectList(PageInfo pi) {
-		// TODO Auto-generated method stub
-		return null;
+		return bDao.selectList(sqlSession, pi);
 	}
 
 	@Override
 	public int insertBoard(Board b) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return bDao.insertBoard(sqlSession, b);
 	}
 
 	@Override
 	public int increaseCount(int boardNo) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return bDao.increaseCount(sqlSession, boardNo);
 	}
 
 	@Override
 	public Board selectBoard(int boardNo) {
 		// TODO Auto-generated method stub
-		return null;
+		return bDao.selectBoard(sqlSession, boardNo);
 	}
 
 	@Override
