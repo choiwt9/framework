@@ -11,6 +11,7 @@
 <result column="change_name" property="changeName"/>
 <result column="count" property="count"/>
 <result column="create_date" property="createDate"/>
+<result column="board_content" property="boardContent"/>
 </resultMap>
 
 	<select id="selectListCount" resultType="_int">
@@ -46,4 +47,22 @@
 	            , #{changeName}
 	            , #{boardContent})    
 	</insert>
+	<update id="increaseCount">
+	   UPDATE BOARD
+	    SET COUNT = COUNT + 1
+	    WHERE BOARD_NO = #{boardNo} AND STATUS = 'Y'
+	</update>
+	<select id="selectBoard" resultMap="boardResultSet">
+	   SELECT BOARD_NO
+	         ,BOARD_TITLE
+	         ,BOARD_WRITER
+	         ,TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') "CREATE_DATE"
+	         ,ORIGIN_NAME
+	         , CHANGE_NAME
+	         , BOARD_CONTENT
+	         FROM BOARD
+	         WHERE BOARD_NO = #{boardNo} AND STATUS = 'Y'
+	</select>
+	
+	
 </mapper>
