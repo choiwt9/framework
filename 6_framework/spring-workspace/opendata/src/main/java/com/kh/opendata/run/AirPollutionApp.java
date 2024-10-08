@@ -18,7 +18,7 @@ public class AirPollutionApp {
 
 	public static void main(String[] args) throws IOException  {
 		//요청 주소 (url)
-		 StringBuilder urlBuilder = new StringBuilder("http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty"); /*URL*/
+		 StringBuilder urlBuilder = new StringBuilder(""); /*URL*/
 	    //서비스 인증 키
 		 String myKey = "";//인코딩 키
 		// String myKey = "";//디코딩키
